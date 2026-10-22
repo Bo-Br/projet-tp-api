@@ -1,29 +1,32 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Responses;
 
 use Psr\Http\Message\ResponseInterface as Response;
 
-class ProblemDetailsResponse{
+final class ProblemDetailsResponse
+{
+    public static function create(
+        Response $response,
+        int $status,
+        string $title,
+        string $detail,
+        string $type = 'about:blank'
+    ): Response {
+        $payload = [
+            'type' => $type,
+            'title' => $title,
+            'status' => $status,
+            'detail' => $detail,
+        ];
 
-  public static function create(
-    Response $response,
-    int $status,
-    string $title,
-    string $detail,
-    string $type = "about:blank"
-  ): Response{
+        $json = json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE);
+        $response->getBody()->write($json === false ? '{}' : $json);
 
-    $payload = [
-      "type" => $type,
-      "title" => $title,
-      "status" => $status,
-      "detail" => $detail
-    ];
-
-    $response->getBody()->write(json_encode($payload, JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT));
-
-    return $response->withHeader("Content-Type", "application/problem+json")->withStatus($status);
-  }
-
+        return $response
+            ->withHeader('Content-Type', 'application/problem+json; charset=utf-8')
+            ->withStatus($status);
+    }
 }

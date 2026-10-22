@@ -1,0 +1,13 @@
+DEVCOFFEE - DEMARRAGE RAPIDE
+
+1. Demarre MySQL (XAMPP/WAMP ou ton service MySQL habituel).
+2. La base devcoffee et ses tables doivent deja exister. Si necessaire, execute backend\schema.sql manuellement dans MySQL Workbench.
+3. Verifie les identifiants dans backend\.env.
+4. Double-clique sur launchServers.bat.
+5. L'interface s'ouvre sur http://127.0.0.1:5173.
+
+API : http://127.0.0.1:8000/api/drinks
+
+Le lanceur demarre uniquement les serveurs. Il ne cree et ne modifie pas la base.
+Prerequis : PHP 8.1+ avec pdo_mysql, MySQL demarre, et Bun ou Node.js.
+Les dependances PHP et frontend sont incluses dans cette archive.

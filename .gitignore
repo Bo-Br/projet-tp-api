@@ -163,3 +163,6 @@ backend/.env.production
 frontend/.env
 frontend/.env.development
 frontend/.env.production
+# Backend environment and generated logs
+backend/.env
+backend/var/logs/*.log

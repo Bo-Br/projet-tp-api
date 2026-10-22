@@ -1,18 +1,22 @@
-<template>
-<footer v-if="metrics.responseTime" class="eco-badge">
-🌱 <strong>Sobriété Numérique (API) :</strong>
-Temps : <code>{{ metrics.responseTime }} ms</code> |
-Payload : <code>{{ metrics.payloadSize }} octets</code> |
-CO₂ estimé : <code>{{ metrics.co2 }} g</code>
-</footer>
-</template>
 <script setup lang="ts">
-import type { EcoMetrics } from '../types/ecopark';
-defineProps<{
-metrics: EcoMetrics;
-}>();
+import type { EcoMetrics } from '../types/devcoffee'
+defineProps<{ metrics: EcoMetrics }>()
 </script>
-<style scoped>
-.eco-badge { margin-top: 20px; background: #d1e7dd; color: #0f5132; padding: 12px;
-border-radius: 8px; text-align: center; font-size: 13px; }
-</style>    
+
+<template>
+  <footer class="eco-footer" aria-label="Éco-score API">
+    <strong>Éco-score</strong>
+    <div class="eco-metric">
+      <span>Temps</span>
+      <b>{{ metrics.responseTime !== null ? `${metrics.responseTime} ms` : '—' }}</b>
+    </div>
+    <div class="eco-metric">
+      <span>Payload</span>
+      <b>{{ metrics.payloadSize !== null ? `${metrics.payloadSize} octets` : '—' }}</b>
+    </div>
+    <div class="eco-metric">
+      <span>CO₂ estimé</span>
+      <b>{{ metrics.co2 !== null ? `${metrics.co2} g` : '—' }}</b>
+    </div>
+  </footer>
+</template>

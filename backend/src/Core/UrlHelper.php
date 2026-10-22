@@ -1,24 +1,20 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Core;
 
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Routing\RouteContext;
 
-class UrlHelper
+final class UrlHelper
 {
-
     public static function getBaseUrl(Request $request): string
     {
-        $uri       = $request->getUri();
-        $scheme    = $uri->getScheme();
-        $authority = $uri->getAuthority();
-
+        $uri = $request->getUri();
         $routeContext = RouteContext::fromRequest($request);
-        $basePath     = $routeContext->getBasePath();
+        $basePath = $routeContext->getBasePath();
 
-        $baseUrl = rtrim("{$scheme}://{$authority}{$basePath}", "/");
-
-        return $baseUrl;
+        return rtrim(sprintf('%s://%s%s', $uri->getScheme() ?: 'http', $uri->getAuthority(), $basePath), '/');
     }
 }
