@@ -1,28 +1,32 @@
-CREATE DATABASE IF NOT EXISTS ecopark CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;
 
-USE ecopark;
+CREATE DATABASE IF NOT EXISTS devcoffee 
+    CHARACTER SET utf8mb4
+    COLLATE utf8mb4_unicode_ci;
 
-CREATE TABLE IF NOT EXISTS stations(
-  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  location_name VARCHAR(150) NOT NULL,
-  power_kw INT NOT NULL,
-  is_available TINYINT(1) DEFAULT 1,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+USE devcoffee;
+
+CREATE TABLE drinks ( 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    caffeine_mg INT NOT NULL,
+    volume_ml INT NOT NULL
 ) ENGINE=InnoDB;
 
-CREATE TABLE IF NOT EXISTS charge_sessions(
-  id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-  station_id INT NOT NULL,
-  user_name VARCHAR(100) NOT NULL,
-  kwh_requested INT NOT NULL,
-  created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
-  FOREIGN KEY (id) REFERENCES stations(id) ON DELETE CASCADE
+
+CREATE TABLE consumptions ( 
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    drink_id INT,
+    developer_name VARCHAR(100) NOT NULL,
+    consumed_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+
+    CONSTRAINT fk_consumptions_drinks
+        FOREIGN KEY (drink_id)
+        REFERENCES drinks(id)
+        ON DELETE CASCADE
 ) ENGINE=InnoDB;
 
-INSERT INTO 
-stations(location_name, power_kw, is_available) 
-VALUES 
-("Station Centre-Ville", 50, 1),
-("Station Gare Centrale", 150, 1),
-("Station Eco-Quartier", 22, 0),
-("Station Parking Relais", 11, 1);
+INSERT INTO drinks (name, caffeine_mg, volume_ml)
+VALUES
+    ('Espresso', 80, 30),
+    ('Café Allongé', 110, 120),
+    ('Monster Energy', 160, 500);
