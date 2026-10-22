@@ -27,7 +27,7 @@ final class EcoMetricsMiddleware implements MiddlewareInterface
         }
         $payloadSizeBytes = (int) $payloadSizeBytes;
 
-        // Formule d'estimation imposée par le support du TP.
+        
         $estimatedCo2Grams = ($payloadSizeBytes * 0.000000011) + ($executionTimeMs * 0.000001);
 
         return $response

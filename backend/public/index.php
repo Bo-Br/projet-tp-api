@@ -77,7 +77,7 @@ $errorMiddleware->setDefaultErrorHandler(
         } elseif ($exception instanceof HttpMethodNotAllowedException) {
             $status = 405;
             $title = 'Method Not Allowed';
-            $detail = 'Cette méthode HTTP n’est pas autorisée pour cette ressource.';
+            $detail = 'Cette méthode HTTP n est pas autorisée pour cette ressource.';
         } else {
             $logger->error('Erreur API non gérée.', [
                 'exception' => $exception,

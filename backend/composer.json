@@ -1,6 +1,6 @@
 {
   "name": "devcoffee/api",
-  "description": "API RESTful DevCoffee Tracker",
+  "description": "API DevCoffee",
   "type": "project",
   "require": {
     "php": ">=8.1",

@@ -24,7 +24,7 @@ final class CoffeeService
     {
         $drink = $this->drinks->findById($drinkId);
         if ($drink === null) {
-            throw new ApiProblemException(404, 'Drink Not Found', "Aucune boisson ne correspond à l'identifiant {$drinkId}.");
+            throw new ApiProblemException(404, "Drink Not Found", "Aucune boisson ne correspond à l'identifiant {$drinkId}.");
         }
 
         $alreadyConsumed = $this->consumptions->dailyCaffeineForDeveloper($developerName);
@@ -32,13 +32,13 @@ final class CoffeeService
 
         if ($newTotal > self::DAILY_CAFFEINE_LIMIT_MG) {
             $detail = sprintf(
-                'Seuil de caféine dépassé ! %s a déjà consommé %d mg aujourd’hui (limite : %d mg). Cette boisson porterait le total à %d mg.',
+                "Seuil de caféine dépassé ! %s a déjà consommé %d mg aujourd'hui (limite : %d mg). Cette boisson porterait le total à %d mg.",
                 $developerName,
                 $alreadyConsumed,
                 self::DAILY_CAFFEINE_LIMIT_MG,
                 $newTotal
             );
-            $this->logger->warning('Consommation refusée : limite quotidienne dépassée.', [
+            $this->logger->warning("Consommation refusée : limite quotidienne dépassée.", [
                 'developer_name' => $developerName,
                 'consumed_mg' => $alreadyConsumed,
                 'attempted_drink_mg' => (int) $drink['caffeine_mg'],
