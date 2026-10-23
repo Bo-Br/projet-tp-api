@@ -6,6 +6,9 @@ Projet DevCoffee adapte a la structure existante : Slim 4 / PHP-DI et Vue 3 / Ty
 
 1. Demarre MySQL.
 2. La base `devcoffee` et les tables doivent deja exister. Si besoin, execute `backend/schema.sql` manuellement dans MySQL Workbench.
+
+  <img width="786" height="523" alt="image" src="https://github.com/user-attachments/assets/8afc3225-5d90-4717-9326-9c55febde3e4" />
+
 3. Verifie `backend/.env` (par defaut : `127.0.0.1:3306`, utilisateur `root`, mot de passe vide).
 
 ```env
