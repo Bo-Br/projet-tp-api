@@ -7,7 +7,25 @@ Projet DevCoffee adapte a la structure existante : Slim 4 / PHP-DI et Vue 3 / Ty
 1. Demarre MySQL.
 2. La base `devcoffee` et les tables doivent deja exister. Si besoin, execute `backend/schema.sql` manuellement dans MySQL Workbench.
 3. Verifie `backend/.env` (par defaut : `127.0.0.1:3306`, utilisateur `root`, mot de passe vide).
-4. Lance `launchServers.bat`.
+
+```env
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_NAME=devcoffee
+DB_USERNAME=votre_username
+DB_PASSWORD=votre_mdp
+APP_TIMEZONE=Europe/Paris
+```
+
+4. Ajouter un frontend/.env
+
+```env
+
+VITE_API_BASE_URL=http://127.0.0.1:8000/api
+
+```
+
+5. Lance `launchServers.bat`.
 
 Le script demarre simplement l'API et l'interface. Il ne cree ni ne modifie la base de donnees.
 
@@ -17,6 +35,13 @@ Le script demarre simplement l'API et l'interface. Il ne cree ni ne modifie la b
 ## Prerequis
 
 PHP 8.1+ avec `pdo_mysql`, MySQL demarre, et Bun ou Node.js. Si ton installation MySQL utilise d'autres identifiants, modifie `backend/.env`.
+
+Deux fichiers .env a créer
+
+
+
+
+
 
 ## Fonctionnalites du TP
 
