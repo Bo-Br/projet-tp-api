@@ -59,3 +59,11 @@ Deux fichiers .env a créer
 - Erreurs au format RFC 7807 et liens HATEOAS
 - En-tetes de sobriete numerique (temps, taille du payload, CO2 estime)
 - CORS et journalisation des erreurs
+
+
+
+# Équipe
+
+- Bogdane BRAOUN (Bo-Br)
+- Nathanael LECRON 
+- Louis BOSSOUTROT
