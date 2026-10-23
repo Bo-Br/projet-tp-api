@@ -43,7 +43,7 @@ VITE_API_BASE_URL=http://127.0.0.1:8000/api
 5. Lance `launchServers.bat`.
 
 - Interface : http://127.0.0.1:5173
-- API : http://127.0.0.1:8000/api/drinks
+- API : http://127.0.0.1:8000/api/drinks (TESTABLE AVEC BRUNO)
 
 ## Prerequis
 
