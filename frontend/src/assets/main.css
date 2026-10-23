@@ -6,7 +6,7 @@ body {
   padding: 20px;
   font-family: Arial, sans-serif;
   color: #222;
-  background: #fff;
+  background: #fbfbfb;
 }
 button,
 input,
@@ -44,7 +44,7 @@ h2 {
   align-items: start;
 }
 .panel {
-  border: 1px solid #ccc;
+  border: 1px solid #93705b;
   padding: 16px;
 }
 .consumption-form {
@@ -56,8 +56,8 @@ input,
 select {
   width: 100%;
   padding: 8px;
-  border: 1px solid #aaa;
-  background: white;
+  border: 1px solid #cacaca;
+  background: rgb(162, 133, 100);
 }
 .button-primary {
   margin-top: 8px;
@@ -111,7 +111,7 @@ td {
 }
 .empty-state,
 .field-hint {
-  color: #555;
+  color: #796043;
 }
 .sr-only {
   position: absolute;
@@ -124,6 +124,14 @@ td {
   white-space: nowrap;
   border: 0;
 }
+
+
+.delete-button {
+  background-color: #ff9a8a;
+
+}
+
+
 @media (max-width: 700px) {
   body {
     padding: 12px;
@@ -132,3 +140,4 @@ td {
     grid-template-columns: 1fr;
   }
 }
+
