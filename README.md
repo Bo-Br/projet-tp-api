@@ -42,8 +42,6 @@ VITE_API_BASE_URL=http://127.0.0.1:8000/api
 
 5. Lance `launchServers.bat`.
 
-Le script demarre simplement l'API et l'interface. Il ne cree ni ne modifie la base de donnees.
-
 - Interface : http://127.0.0.1:5173
 - API : http://127.0.0.1:8000/api/drinks
 
@@ -52,10 +50,6 @@ Le script demarre simplement l'API et l'interface. Il ne cree ni ne modifie la b
 PHP 8.1+ avec `pdo_mysql`, MySQL demarre, et Bun ou Node.js. Si ton installation MySQL utilise d'autres identifiants, modifie `backend/.env`.
 
 Deux fichiers .env a créer
-
-
-
-
 
 
 ## Fonctionnalites du TP
