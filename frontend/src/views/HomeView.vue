@@ -36,7 +36,10 @@ async function handleDelete(item: Consumption): Promise<void> {
 <template>
   <main class="page-shell">
     <header class="site-header">
-      <h1>DevCoffee</h1>
+        <h1>DevCoffee</h1>
+        <p class="site-description">
+            Le suivi des consommations de votre équipe.
+        </p>
     </header>
 
     <section class="notice-stack" aria-live="polite">
