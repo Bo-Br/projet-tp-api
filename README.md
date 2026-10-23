@@ -1,6 +1,12 @@
 # DevCoffee
 
-Projet DevCoffee adapte a la structure existante : Slim 4 / PHP-DI et Vue 3 / TypeScript. 
+Projet DevCoffee : 
+
+● Back-end : PHP 8+, Slim Framework 4, PHP-DI (IoC Container), Monolog, PDO
+/ MySQL.
+● Front-end : Vue 3 (Composition API avec <script setup>).
+● Format des données : application/json et application/problem+json (RFC
+7807).
 
 >[!warning]
 >EN CAS D'ERREUR
