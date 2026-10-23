@@ -1,6 +1,10 @@
 # DevCoffee
 
-Projet DevCoffee adapte a la structure existante : Slim 4 / PHP-DI et Vue 3 / TypeScript. Les dependances PHP (`backend/vendor`) et frontend (`frontend/node_modules`) sont incluses.
+Projet DevCoffee adapte a la structure existante : Slim 4 / PHP-DI et Vue 3 / TypeScript. 
+
+En cas d'erreur :
+
+[!WARNING] > Dans backend faire `composer install`, dans frontend faire `npm install` et  `bun install` > 
 
 ## Demarrage sous Windows
 
