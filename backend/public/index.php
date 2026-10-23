@@ -5,7 +5,6 @@ declare(strict_types=1);
 use App\Controllers\ConsumptionController;
 use App\Controllers\DrinkController;
 use App\Core\Database;
-use App\Core\FileLogger;
 use App\Middlewares\CorsMiddleware;
 use App\Middlewares\EcoMetricsMiddleware;
 use App\Responses\ApiProblemException;
@@ -31,15 +30,8 @@ $logDirectory = $backendRoot . '/var/logs';
 if (!is_dir($logDirectory)) {
     mkdir($logDirectory, 0775, true);
 }
-// Le projet de départ ne contient pas Monolog dans vendor. Si la dépendance
-// est présente (après composer install), on l'utilise ; sinon le logger PSR-3
-// local assure le fonctionnement immédiat de l'archive téléchargée.
-if (class_exists('Monolog\\Logger') && class_exists('Monolog\\Handler\\StreamHandler')) {
-    $logger = new \Monolog\Logger('devcoffee');
-    $logger->pushHandler(new \Monolog\Handler\StreamHandler($logDirectory . '/app.log', \Monolog\Logger::WARNING));
-} else {
-    $logger = new FileLogger($logDirectory . '/app.log');
-}
+$logger = new \Monolog\Logger('devcoffee');
+$logger->pushHandler(new \Monolog\Handler\StreamHandler($logDirectory . '/app.log', \Monolog\Logger::WARNING));
 
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->useAutowiring(true);

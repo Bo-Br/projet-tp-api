@@ -23,7 +23,7 @@ if errorlevel 1 (
 
 if not exist "%PROJECT_ROOT%backend\vendor\autoload.php" (
   echo ERREUR : dependances PHP absentes dans backend\vendor.
-  echo Cette archive doit conserver le dossier vendor d'origine.
+  echo Execute composer install dans le dossier backend si les dependances sont absentes.
   pause
   exit /b 1
 )
@@ -39,7 +39,7 @@ echo La base MySQL devcoffee doit deja exister et contenir les tables du fichier
 echo Le script ne cree ni ne modifie la base de donnees.
 echo.
 echo [1/2] Demarrage de l'API PHP sur http://127.0.0.1:8000 ...
-start "DevCoffee API" /D "%PROJECT_ROOT%backend" cmd /k ""%PHP_BIN%" -S 127.0.0.1:8000 -t public router.php"
+start "DevCoffee API" /D "%PROJECT_ROOT%backend" cmd /k ""%PHP_BIN%" -S 127.0.0.1:8000 -t public public/index.php"
 
 echo [2/2] Demarrage de l'interface Vue sur http://127.0.0.1:5173 ...
 where bun >nul 2>nul
