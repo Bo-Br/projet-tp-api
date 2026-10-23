@@ -64,6 +64,6 @@ Deux fichiers .env a créer
 
 # Équipe
 
-- Bogdane BRAOUN (Bo-Br)
-- Nathanael LECRON 
-- Louis BOSSOUTROT
+- Bogdane BRAOUN (Bo-Br) | Backend/LeadDev
+- Nathanael LECRON       | Frontend
+- Louis BOSSOUTROT       | Backend
