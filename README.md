@@ -4,6 +4,7 @@ Projet DevCoffee adapte a la structure existante : Slim 4 / PHP-DI et Vue 3 / Ty
 
 >[!warning]
 >EN CAS D'ERREUR
+>
 >Dans backend faire `composer install`, dans frontend faire `npm install` et  `bun install` > 
 
 
